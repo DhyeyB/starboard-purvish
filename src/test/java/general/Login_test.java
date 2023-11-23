@@ -187,14 +187,14 @@ public class Login_test
 
 			cap.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
 
-			cap.setCapability("app", "/home/bs/Documents/starboard-Android/starboard/apk/Starboard-dev.apk");
+			//cap.setCapability("app", "/home/bs/Documents/starboard-Android/starboard/apk/Starboard-dev.apk");
 
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub/"), cap);
 
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 
 			// Close starboard app
-			driver.closeApp();
+			//driver.closeApp();
 	
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
