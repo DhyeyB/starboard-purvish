@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="5" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[==========Application closed==========]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2023-11-23T14:24:25 IST" name="StarboardSuite" finished-at="2023-11-23T14:25:02 IST" duration-ms="36868">
+    <groups>
+    </groups>
+    <test started-at="2023-11-23T14:24:25 IST" name="Starboard_test_cases" finished-at="2023-11-23T14:25:02 IST" duration-ms="36868">
+      <class name="general.Base">
+        <test-method is-config="true" signature="LoginTOApplication()[pri:0, instance:general.Base@352e612e]" started-at="2023-11-23T14:24:12 IST" name="LoginTOApplication" finished-at="2023-11-23T14:24:25 IST" duration-ms="13566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTOApplication -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:general.Base@352e612e]" started-at="2023-11-23T14:25:02 IST" name="TearDown" finished-at="2023-11-23T14:25:02 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[==========Application closed==========]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- general.Base -->
+      <class name="general.Linking_Transactions">
+        <test-method signature="Link_Invoice()[pri:1, instance:general.Linking_Transactions@6dba847b]" started-at="2023-11-23T14:24:25 IST" name="Link_Invoice" finished-at="2023-11-23T14:24:34 IST" duration-ms="8356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Link_Invoice -->
+        <test-method signature="Link_Expense_Categories()[pri:2, instance:general.Linking_Transactions@6dba847b]" started-at="2023-11-23T14:24:34 IST" name="Link_Expense_Categories" finished-at="2023-11-23T14:24:48 IST" duration-ms="14640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Link_Expense_Categories -->
+        <test-method signature="Notes_Add()[pri:3, instance:general.Linking_Transactions@6dba847b]" started-at="2023-11-23T14:24:48 IST" name="Notes_Add" finished-at="2023-11-23T14:25:02 IST" duration-ms="13791" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Notes_Add -->
+      </class> <!-- general.Linking_Transactions -->
+    </test> <!-- Starboard_test_cases -->
+  </suite> <!-- StarboardSuite -->
+</testng-results>
