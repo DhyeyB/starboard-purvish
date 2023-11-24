@@ -1,4 +1,5 @@
 package general;
+
 import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
@@ -14,72 +15,67 @@ import io.qameta.allure.Allure;
 
 import org.testng.Assert;
 
-
-//public class Setting_Yacht extends Login_test
-public class Setting_Yacht extends Base
+public class Setting_Yacht extends Login_test
+//public class Setting_Yacht extends Base 
 {
-public TextReport report = new TextReport();
-		
-@Test(priority = 1)
-private static void Sync_data() throws Exception
+	public TextReport report = new TextReport();
 
-{
-	try
+	@Test(priority = 1)
+	private static void Sync_data() throws Exception
 
 	{
+		try
 
-		Home();
+		{
 
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+			Home();
 
-		WebElement Sync_data = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Settings']")));
+			WebDriverWait wait = new WebDriverWait(driver, 20);
 
-		// Click on Settings
-		driver.findElement(By.xpath("//android.widget.TextView[@text='Settings']")).click();
+			WebElement Sync_data = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Settings']")));
 
-		// Confirm that you are on Settings page
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//android.widget.TextView[@text='Settings' and @resource-id='com.impossible_research.sandbox.starboard:id/head_txt']")));
+			// Click on Settings
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Settings']")).click();
 
-		// Print Yacht settings
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Yacht Settings']"))).click();
+			// Confirm that you are on Settings page
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+					"//android.widget.TextView[@text='Settings' and @resource-id='com.impossible_research.sandbox.starboard:id/head_txt']")));
 
-		// Confirm that you are on Yacht setting page by clicking on Sync Data
-		wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sync Data']")))
-				.click();
+			// Print Yacht settings
+			wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Yacht Settings']"))).click();
 
-		// Confirm that you are on Sync Data page
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sync Data']")));
+			// Confirm that you are on Yacht setting page by clicking on Sync Data
+			wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sync Data']"))).click();
 
-		// Click on Sync All button to Sync Data
-		WebElement Sync_data1 = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sync All Data']")));
-		String ActualTitle = Sync_data1.getText();
+			// Confirm that you are on Sync Data page
+			wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sync Data']")));
 
-		Sync_data1.click();
+			// Click on Sync All button to Sync Data
+			WebElement Sync_data1 = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sync All Data']")));
+			String ActualTitle = Sync_data1.getText();
 
-		WebDriverWait wait_sync = new WebDriverWait(driver, 20);
+			Sync_data1.click();
 
-		WebElement Sync_data2 = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='0 second ago']")));
+			WebDriverWait wait_sync = new WebDriverWait(driver, 20);
+
+			WebElement Sync_data2 = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='0 second ago']")));
+
+		}
+
+		catch (Exception e)
+
+		{
+			Allure.addAttachment("AllureSelenide",
+					new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+			Assert.fail(e.getMessage());
+
+		}
 
 	}
-
-	catch (Exception e)
-
-	{
-		Allure.addAttachment("AllureSelenide",
-				new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-		Assert.fail(e.getMessage());
-
-	}
-
 }
-}
-	
-	
-

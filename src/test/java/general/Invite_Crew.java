@@ -20,8 +20,8 @@ import io.qameta.allure.Allure;
 
 import java.sql.Timestamp;
 
-//public class Invite_Crew extends Login_test
-public class Invite_Crew extends Base
+public class Invite_Crew extends Login_test
+//public class Invite_Crew extends Base
 
 {
 
@@ -113,7 +113,7 @@ public class Invite_Crew extends Base
 			driver.findElement(By.xpath(
 					"//android.widget.EditText[@text='' and @resource-id='com.impossible_research.sandbox.starboard:id/email']"))
 					.sendKeys(myEmailAddress);
-			
+
 			driver.hideKeyboard();
 
 			// Clicked on Send Magic link button

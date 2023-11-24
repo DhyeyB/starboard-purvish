@@ -16,8 +16,8 @@ import io.qameta.allure.Allure;
 
 import java.sql.Timestamp;
 
-//public class Add_Location extends Login_test {
-public class Add_Location extends Base {
+public class Add_Location extends Login_test {
+//public class Add_Location extends Base {
 
 	@Test(priority = 1)
 	private static void Update_location() throws Exception {

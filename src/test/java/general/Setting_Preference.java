@@ -15,8 +15,8 @@ import io.qameta.allure.Allure;
 
 import java.sql.Timestamp;
 
-//public class Setting_Preference extends Login_test {
-public class Setting_Preference extends Base {
+public class Setting_Preference extends Login_test {
+//public class Setting_Preference extends Base {
 
 	@Test(priority = 1)
 	private static void Preference() throws Exception
@@ -25,7 +25,6 @@ public class Setting_Preference extends Base {
 		try
 
 		{
-
 			Home();
 
 			WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -120,6 +119,7 @@ public class Setting_Preference extends Base {
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Address']")));
 
 			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
 			// Click on Address to update
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(

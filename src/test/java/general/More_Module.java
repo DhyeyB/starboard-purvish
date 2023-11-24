@@ -15,8 +15,8 @@ import io.qameta.allure.Allure;
 
 import java.sql.Timestamp;
 
-//public class More_Module extends Login_test
-public class More_Module extends Base
+public class More_Module extends Login_test
+//public class More_Module extends Base
 
 {
 
@@ -33,7 +33,6 @@ public class More_Module extends Base
 			WebElement more_supplier = wait.until(
 					ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='More']")));
 
-			// driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 			// Click on More
 			driver.findElement(By.xpath("//android.widget.TextView[@text='More']")).click();
 
@@ -170,11 +169,11 @@ public class More_Module extends Base
 			// Add PO title name
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
+					"//android.widget.EditText[@text='PO Title' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
 					.click();
 
 			driver.findElement(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
+					"//android.widget.EditText[@text='PO Title' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
 					.sendKeys("PO" + " " + timestamp);
 
 			driver.hideKeyboard();
@@ -266,16 +265,18 @@ public class More_Module extends Base
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 					"//android.widget.EditText[@text='Invoice Name' and @resource-id='com.impossible_research.sandbox.starboard:id/invoice_name_txt']")))
 					.click();
+
 			driver.findElement(By.xpath(
 					"//android.widget.EditText[@text='Invoice Name' and @resource-id='com.impossible_research.sandbox.starboard:id/invoice_name_txt']"))
 					.sendKeys("INV" + " " + timestamp);
 
 			// Add Invoice number
 			driver.findElement(By.xpath(
-					"//android.widget.EditText[@text='00000000XX' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
+					"//android.widget.EditText[@text='####' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
 					.click();
+
 			driver.findElement(By.xpath(
-					"//android.widget.EditText[@text='00000000XX' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
+					"//android.widget.EditText[@text='####' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
 					.sendKeys("12" + " " + timestamp);
 
 			driver.hideKeyboard();
@@ -366,10 +367,11 @@ public class More_Module extends Base
 
 			// Add Quotes name
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
+					"//android.widget.EditText[@text='Quote Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
 					.click();
+
 			driver.findElement(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
+					"//android.widget.EditText[@text='Quote Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
 					.sendKeys("QT" + " " + timestamp);
 
 			driver.hideKeyboard();
@@ -460,18 +462,22 @@ public class More_Module extends Base
 
 			// Add Projects name
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
+					"//android.widget.EditText[@text='Name*' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
 					.click();
+
 			driver.findElement(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
+					"//android.widget.EditText[@text='Name*' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
 					.sendKeys("PJ" + " " + timestamp);
+
 			driver.hideKeyboard();
-			// Click on Description
+
+			// Click onDescription
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Description']")).click();
 
 			// Description added
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
 					"//android.widget.EditText[@text='Description' and @resource-id='com.impossible_research.sandbox.starboard:id/desc']")));
+
 			driver.findElement(By.xpath(
 					"//android.widget.EditText[@text='Description' and @resource-id='com.impossible_research.sandbox.starboard:id/desc']"))
 					.sendKeys("Project Description added by scrpit");
@@ -547,10 +553,11 @@ public class More_Module extends Base
 
 			// Add Report name
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
+					"//android.widget.EditText[@text='Report Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']")))
 					.click();
+
 			driver.findElement(By.xpath(
-					"//android.widget.EditText[@text='Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
+					"//android.widget.EditText[@text='Report Name' and @resource-id='com.impossible_research.sandbox.starboard:id/name_blank']"))
 					.sendKeys("Report" + " " + timestamp);
 			driver.hideKeyboard();
 

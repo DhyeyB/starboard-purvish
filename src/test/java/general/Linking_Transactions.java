@@ -17,8 +17,8 @@ import io.qameta.allure.Allure;
 
 import java.sql.Timestamp;
 
-//public class Linking_Transactions extends Login_test {
-public class Linking_Transactions extends Base {
+public class Linking_Transactions extends Login_test {
+//public class Linking_Transactions extends Base {
 
 	@Test(priority = 1)
 	private static void Link_Invoice() throws Exception {
