@@ -9,9 +9,9 @@
     	<class name="general.Add_Location"/>
     	<class name="general.Invite_Crew"/>
     	<class name="general.Linking_Transactions"/>
-    	<class name="general.More_Module"/>
       	<class name="general.Setting_Preference"/>
       	<class name="general.Setting_Yacht"/>
+		<class name="general.More_Module"/>
       	
     </classes>
   </test> <!-- Test -->
