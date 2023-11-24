@@ -55,6 +55,7 @@ jobs:
         arch: x86_64
         profile: Nexus 6
         script: |
+          adb uninstall io.appium.uiautomator2.server.test
           adb install apk/Starboard-dev.apk
           mvn test
 
