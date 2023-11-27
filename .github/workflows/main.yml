@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest 
     strategy:
       matrix:
-        api-level: [33] 
+        api-level: [29] 
         target: [playstore]
     steps:
     - uses: actions/checkout@v4 
@@ -53,12 +53,21 @@ jobs:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
         arch: x86_64
-        profile: Nexus 5
+        profile: Nexus 6
         script: |
           adb install apk/Starboard-dev.apk
           adb shell pm clear com.google.android.gm
           adb shell pm clear com.impossible_research.sandbox.starboard
           mvn clean test
+
+    - name: upload app
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@master
+      with:
+        name: Desktop Application
+        path: |
+          ./target/allure-results
 
     # - name: Stop Recording
     #   continue-on-error: true
