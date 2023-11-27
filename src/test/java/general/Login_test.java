@@ -175,8 +175,8 @@ public class Login_test
 			driver.activateApp("com.google.android.gm");
 			System.out.println(" ########### gmail app open first time ######### ");
 
-			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
-			// 		.click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+					.click();
 			System.out.println(" ########### allow ######### ");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
