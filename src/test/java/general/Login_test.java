@@ -196,6 +196,7 @@ public class Login_test
 			// Close starboard app
 			// driver.closeApp();
 	
+	
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
 			
