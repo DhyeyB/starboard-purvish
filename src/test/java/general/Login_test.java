@@ -166,7 +166,7 @@ public class Login_test
 			WebDriverWait wait = new WebDriverWait(driver, 100);
 
 			// Close starboard app
-			driver.closeApp();
+			// driver.closeApp();
 
 			System.out.println(" ########### starboard app closed ######### ");
 			//driver.terminateApp("com.impossible_research.sandbox.starboard");
