@@ -63,9 +63,7 @@ public class Login_test
 	public static void login() throws Exception
 
 	{
-		try
-
-		{
+	
 
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			
@@ -174,25 +172,12 @@ public class Login_test
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Home']")));
 			System.out.println("###########   app home   ###############");
 
-		}
-
-		catch (Exception e1)
-
-		{
-
-			System.out.println(e1);
-			Allure.addAttachment("AllureSelenide",
-					new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-
-		}
 
 	}
 
 	@BeforeSuite
 	public void LoginTOApplication() throws Exception {
-		try
-
-		{
+		
 
 			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 
@@ -292,6 +277,9 @@ public class Login_test
 			WebElement skip = wait.until(ExpectedConditions
 					.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
 			System.out.println("###########  skip  ###############");
+
+		try 
+		{
 
 			if (skip.isDisplayed()) {
 
