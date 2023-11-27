@@ -54,7 +54,7 @@ public class Login_test
 	{
 
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			system.out.println(" ########### enter in sign in method ######### ");
+			System.out.println(" ########### enter in sign in method ######### ");
 			
 			// Clicked on Sign in button
 			wait.until(ExpectedConditions
@@ -168,20 +168,20 @@ public class Login_test
 			// Close starboard app
 			driver.closeApp();
 
-			system.out.println(" ########### starboard app closed ######### ");
+			System.out.println(" ########### starboard app closed ######### ");
 			//driver.terminateApp("com.impossible_research.sandbox.starboard");
 	
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
-			system.out.println(" ########### gmail app open first time ######### ");
+			System.out.println(" ########### gmail app open first time ######### ");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
-			system.out.println(" ########### allow ######### ");
+			System.out.println(" ########### allow ######### ");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
-			system.out.println(" ########### got it ######### ");
+			System.out.println(" ########### got it ######### ");
 
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
@@ -197,7 +197,7 @@ public class Login_test
 
 			// Enter Email Address
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
-			system.out.println(" ########### gmail email address ######### ");
+			System.out.println(" ########### gmail email address ######### ");
 
 			//Hide the keyboard
 			driver.hideKeyboard();
@@ -210,7 +210,7 @@ public class Login_test
 
 			// Enter Password
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
-			system.out.println(" ########### gmail password ######### ");
+			System.out.println(" ########### gmail password ######### ");
 			driver.hideKeyboard();
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 
@@ -230,13 +230,13 @@ public class Login_test
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Got it']")))
 					.click();
-			system.out.println(" ########### gmail login success ######### ");
+			System.out.println(" ########### gmail login success ######### ");
 
 			driver.terminateApp("com.google.android.gm");
-			system.out.println(" ########### gmail app closed ######### ");
+			System.out.println(" ########### gmail app closed ######### ");
 
 			driver.activateApp("com.impossible_research.sandbox.starboard");
-			system.out.println(" ########### starboard app open ######### ");
+			System.out.println(" ########### starboard app open ######### ");
 			//driver.startActivity(new Activity("com.impossible_research.sandbox.starboard","com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
 			try
 
