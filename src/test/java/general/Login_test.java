@@ -156,8 +156,8 @@ public class Login_test
 					.getText();
 			driver.findElement(By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]"))
 					.click();
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
-					.click();
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+			// 		.click();
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Home']")));
 
@@ -196,12 +196,12 @@ public class Login_test
 			// Close starboard app
 			// driver.closeApp();
 	
-	
+
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
 			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
-					.click();
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+			// 		.click();
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
