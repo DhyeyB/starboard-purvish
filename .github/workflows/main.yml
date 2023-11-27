@@ -16,17 +16,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4 
 
-    - name: install FFMPEG
-      run: |
-        brew install ffmpeg
+    # - name: install FFMPEG
+    #   run: |
+    #     brew install ffmpeg
 
-    - name: run FFMPEG
-      run: |
-        # ffmpeg -f avfoundation -i "0" uyvy422 -t 00:05:00 output.mp4 &
-        ffmpeg -f avfoundation -i "0" -r 30 -pix_fmt yuv420p -probesize 50M output.mkv &
+    # - name: run FFMPEG
+    #   run: |
+    #     # ffmpeg -f avfoundation -i "0" uyvy422 -t 00:05:00 output.mp4 &
+    #     ffmpeg -f avfoundation -i "0" -r 30 -pix_fmt yuv420p -probesize 50M output.mkv &
   
-    - name: Sleep
-      run: sleep 5
+    # - name: Sleep
+    #   run: sleep 5
 
     - name: Set up JDK 19
       uses: actions/setup-java@v3
@@ -60,18 +60,18 @@ jobs:
           adb shell pm clear com.impossible_research.sandbox.starboard
           mvn clean test
 
-    - name: Stop Recording
-      continue-on-error: true
-      shell: bash
-      run: |
-        PID=$(ps aux | grep -m 1 ffmpeg | awk '{print $2}')
-        python -c "import os, signal; os.kill($PID, signal.SIGINT)"
+    # - name: Stop Recording
+    #   continue-on-error: true
+    #   shell: bash
+    #   run: |
+    #     PID=$(ps aux | grep -m 1 ffmpeg | awk '{print $2}')
+    #     python -c "import os, signal; os.kill($PID, signal.SIGINT)"
 
-    - name: upload video
-      if: always()
-      continue-on-error: true
-      uses: actions/upload-artifact@master
-      with:
-        name: Recording
-        path: output.mkv
+    # - name: upload video
+    #   if: always()
+    #   continue-on-error: true
+    #   uses: actions/upload-artifact@master
+    #   with:
+    #     name: Recording
+    #     path: output.mkv
 
