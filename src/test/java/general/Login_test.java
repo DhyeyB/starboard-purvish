@@ -200,7 +200,7 @@ public class Login_test
 
 			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 			// 		.click();
-			// System.out.println("###########   allow   ###############");
+			System.out.println("###########   allow   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
