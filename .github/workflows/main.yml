@@ -56,6 +56,8 @@ jobs:
         profile: Nexus 6
         script: |
           adb install apk/Starboard-dev.apk
+          adb shell pm clear com.google.android.gm
+          adb shell pm clear com.impossible_research.sandbox.starboard
           mvn clean test
 
     - name: Stop Recording
