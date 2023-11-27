@@ -37,7 +37,6 @@ public class Login_test
 	public static void Home() throws Exception
 
 	{
-		try {
 			// Confirm that you are on Home screen
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			
@@ -47,23 +46,12 @@ public class Login_test
 			
 			// Print that You are on Home screen
 			div.click();
-		}
-
-		catch (Exception e)
-
-		{
-
-			System.out.println(e);
-			Allure.addAttachment("AllureSelenide",
-					new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-
-		}
+			
 	}
 
 	public static void login() throws Exception
 
 	{
-	
 
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			
@@ -72,7 +60,6 @@ public class Login_test
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text=\"Sign in\"]")));
 
 			driver.findElement(By.xpath("//android.widget.TextView[@text=\"Sign in\"]")).click();
-			System.out.println("###########   starboard sign in   ###############");
 
 			// click on email textbox
 			wait.until(
@@ -81,21 +68,16 @@ public class Login_test
 			driver.findElement(By.xpath("//android.widget.EditText[@index='0']"))
 
 					.sendKeys("pandyapurvish1708@gmail.com"); // User for Staging environment
-			System.out.println("###########   starboard email   ###############");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Send Magic Link']")).click();
-			System.out.println("###########   maginc link sent   ###############");
-
 			wait.until(
 					ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='OK']")));
 			driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();
 
 			driver.closeApp();
-			System.out.println("###########   starboard app closed   ###############");
 
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
-			System.out.println("###########   gmail open   ###############");
 
 			// Wait for new magic link mail
 			wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -103,18 +85,15 @@ public class Login_test
 
 			driver.findElement(By.xpath("(//android.widget.TextView[@text='Magic link to sign in to the app.']) [1]"))
 					.click();
-			System.out.println("###########   magiclink mail found   ###############");
 
 			// Scroll and Click on magic link
 			MobileElement ele = driver.findElement(MobileBy.AndroidUIAutomator(
 					"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Login to Starboard\"))"));
 			ele.click();
-			System.out.println("###########   click on magic link   ###############");
 
 			// Enter Your PIN
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Enter your new PIN']")));
-			System.out.println("###########   new pin entered   ###############");
 
 			// Click on 1
 			driver.findElement(By.xpath("//android.widget.TextView[@text='1']")).click();
@@ -153,11 +132,9 @@ public class Login_test
 
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='PIN Set Up Successful']")));
-			System.out.println("###########   pin set successfully   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Skip']")))
 					.click();
-			System.out.println("###########   click on skip   ###############");
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(
 					By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]")));
@@ -167,12 +144,8 @@ public class Login_test
 					.click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
-			System.out.println("###########   app allow   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Home']")));
-			System.out.println("###########   app home   ###############");
-
-
 	}
 
 	@BeforeSuite
@@ -193,102 +166,81 @@ public class Login_test
 
 			// Close starboard app
 			driver.closeApp();
+			//driver.terminateApp("com.impossible_research.sandbox.starboard");
 	
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
-			System.out.println("###########   gamil open first time  ###############");
-
-			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
-			// 		.click();
-			// System.out.println("###########   allow   ###############");
+			
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+					.click();
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
-			System.out.println("###########   got it   ###############");
 
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
-			System.out.println("###########   add an email add.   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Google']")))
 					.click();
-			System.out.println("###########   Google   ###############");
 
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
-			System.out.println("###########   gamil sign in   ###############");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
-			System.out.println("###########   index 2   ###############");
 
 			// Enter Email Address
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
-			System.out.println("###########   gamil id   ###############");
-
+			
 			//Hide the keyboard
 			driver.hideKeyboard();
 			
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-			System.out.println("###########   next   ###############");
 
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Show password']")));
 			driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
-			System.out.println("###########   index 0   ###############");
 
 			// Enter Password
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
-			System.out.println("###########   gmail password   ###############");
-
 			driver.hideKeyboard();
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-			System.out.println("###########   Next   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
 					.click();
-			System.out.println("###########   agree   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='MORE']")))
 					.click();
-			System.out.println("###########   more   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='ACCEPT']")))
 					.click();
-			System.out.println("###########   accept   ###############");
 
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='pandyapurvish1708@gmail.com']")));
-			System.out.println("###########   email confirm   ###############");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@text='TAKE ME TO GMAIL']")).click();
-			System.out.println("###########   take me to gamil   ###############");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Got it']")))
 					.click();
-			System.out.println("###########   got it   ###############");
 
 			driver.terminateApp("com.google.android.gm");
-			System.out.println("###########   gamil app closed   ###############");
 
-			driver.startActivity(new Activity("com.impossible_research.sandbox.starboard",
-					"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
-			System.out.println("###########  star board app open   ###############");
+			driver.activateApp("com.impossible_research.sandbox.starboard");
 
-			WebElement skip = wait.until(ExpectedConditions
+			//driver.startActivity(new Activity("com.impossible_research.sandbox.starboard","com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
+			try
+
+				{
+				WebElement skip = wait.until(ExpectedConditions
 					.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
-			System.out.println("###########  skip  ###############");
-
-		try 
-		{
-
-			if (skip.isDisplayed()) {
+			
+				if (skip.isDisplayed()) 
+				{
 
 				skip.click();
-				System.out.println("###########   click on skip   ###############");
+
+				}
 
 			}
-
-		}
 
 		catch (Exception e2)
 
