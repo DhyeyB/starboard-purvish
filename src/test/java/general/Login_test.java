@@ -54,6 +54,7 @@ public class Login_test
 	{
 
 			WebDriverWait wait = new WebDriverWait(driver, 30);
+			system.out.println(" ########### enter in sign in method ######### ");
 			
 			// Clicked on Sign in button
 			wait.until(ExpectedConditions
