@@ -56,7 +56,7 @@ jobs:
         profile: Nexus 6
         script: |
           adb install apk/Starboard-dev.apk
-          mvn test
+          mvn clean test
 
     # - name: Stop Recording
     #   continue-on-error: true
