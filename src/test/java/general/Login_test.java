@@ -37,6 +37,7 @@ public class Login_test
 	public static void Home() throws Exception
 
 	{
+		try {
 			// Confirm that you are on Home screen
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			
@@ -46,15 +47,27 @@ public class Login_test
 			
 			// Print that You are on Home screen
 			div.click();
-			
+		}
+
+		catch (Exception e)
+
+		{
+
+			System.out.println(e);
+			Allure.addAttachment("AllureSelenide",
+					new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+
+		}
 	}
 
 	public static void login() throws Exception
 
 	{
+		try
+
+		{
 
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			System.out.println(" ########### enter in sign in method ######### ");
 			
 			// Clicked on Sign in button
 			wait.until(ExpectedConditions
@@ -147,11 +160,26 @@ public class Login_test
 					.click();
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Home']")));
+
+		}
+
+		catch (Exception e1)
+
+		{
+
+			System.out.println(e1);
+			Allure.addAttachment("AllureSelenide",
+					new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+
+		}
+
 	}
 
 	@BeforeSuite
 	public void LoginTOApplication() throws Exception {
-		
+		try
+
+		{
 
 			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 
@@ -163,29 +191,22 @@ public class Login_test
 
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub/"), cap);
 
-			WebDriverWait wait = new WebDriverWait(driver, 100);
+			WebDriverWait wait = new WebDriverWait(driver, 50);
 
 			// Close starboard app
 			// driver.closeApp();
-
-			System.out.println(" ########### starboard app closed ######### ");
-			//driver.terminateApp("com.impossible_research.sandbox.starboard");
 	
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
-			System.out.println(" ########### gmail app open first time ######### ");
-
+			
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
-			System.out.println(" ########### allow ######### ");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
-			System.out.println(" ########### got it ######### ");
 
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
-			
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Google']")))
 					.click();
@@ -197,8 +218,7 @@ public class Login_test
 
 			// Enter Email Address
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
-			System.out.println(" ########### gmail email address ######### ");
-
+			
 			//Hide the keyboard
 			driver.hideKeyboard();
 			
@@ -210,7 +230,6 @@ public class Login_test
 
 			// Enter Password
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
-			System.out.println(" ########### gmail password ######### ");
 			driver.hideKeyboard();
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 
@@ -230,28 +249,22 @@ public class Login_test
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Got it']")))
 					.click();
-			System.out.println(" ########### gmail login success ######### ");
 
 			driver.terminateApp("com.google.android.gm");
-			System.out.println(" ########### gmail app closed ######### ");
 
-			driver.activateApp("com.impossible_research.sandbox.starboard");
-			System.out.println(" ########### starboard app open ######### ");
-			//driver.startActivity(new Activity("com.impossible_research.sandbox.starboard","com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
-			try
+			driver.startActivity(new Activity("com.impossible_research.sandbox.starboard",
+					"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
 
-				{
-				WebElement skip = wait.until(ExpectedConditions
+			WebElement skip = wait.until(ExpectedConditions
 					.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
-			
-				if (skip.isDisplayed()) 
-				{
+
+			if (skip.isDisplayed()) {
 
 				skip.click();
 
-				}
-
 			}
+
+		}
 
 		catch (Exception e2)
 
@@ -283,4 +296,3 @@ public class Login_test
 	}
 
 }
-
