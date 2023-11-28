@@ -198,14 +198,22 @@ public class Login_test
 	
 
 			// Open Gmail
+
 			driver.activateApp("com.google.android.gm");
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Wait']")))
-					.click();
-			System.out.println("############ wait ###########");
+			WebElement wait123 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Wait']")));
 			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+
+			if (wait123.isDisplayed()) {
+
+				wait123.click();
+				System.out.println("############ wait ###########");
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
-			System.out.println("############ allow ###########");
+				System.out.println("############ allow ###########");
+			}
+
+
+			
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
