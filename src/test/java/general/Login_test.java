@@ -201,7 +201,7 @@ public class Login_test
 			driver.activateApp("com.google.android.gm");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Wait']")))
 					.click();
-			
+			System.out.println("############ wait ###########");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
 			System.out.println("############ allow ###########");
