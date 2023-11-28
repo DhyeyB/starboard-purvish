@@ -189,7 +189,7 @@ public class Login_test
 
 			// cap.setCapability("app", "/home/bs/Documents/starboard-Android/starboard/apk/Starboard-dev.apk");
 
-			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub/"), cap);
+			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/"), cap);
 
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 
