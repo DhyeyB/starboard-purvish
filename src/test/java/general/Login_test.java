@@ -200,24 +200,24 @@ public class Login_test
 			// Open Gmail
 
 			driver.activateApp("com.google.android.gm");
-			WebElement allow123 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")));
+			// WebElement allow123 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")));
 			
 
-			if (allow123.isDisplayed()) {
+			// if (allow123.isDisplayed()) {
 
-				allow123.click();
-				// System.out.println("############ wait ###########");
-				// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
-				// 	.click();
-				System.out.println("############ allow ###########");
-			}
+			// 	allow123.click();
+			// 	// System.out.println("############ wait ###########");
+			// 	// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+			// 	// 	.click();
+			// 	System.out.println("############ allow ###########");
+			// }
 
 
 			
-
+			System.out.println("############ Before Got it ###########");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
-			System.out.println("############ Got it ###########");
+			System.out.println("############ After Got it ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
 			System.out.println("############ add an email address ###########");
