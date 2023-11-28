@@ -206,14 +206,12 @@ public class Login_test
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
 
-			wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Google']")))
 					.click();
 
-			wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Sign in']"))).click();;
 
 			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
 
