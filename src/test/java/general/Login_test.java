@@ -177,6 +177,9 @@ public class Login_test
 
 	@BeforeSuite
 	public void LoginTOApplication() throws Exception {
+		try
+
+			{
 		
 			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 
@@ -265,9 +268,6 @@ public class Login_test
 			// 		"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
 			WebElement skip = wait.until(ExpectedConditions.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
 
-			try
-
-			{
 			
 			if (skip.isDisplayed()) {
 
