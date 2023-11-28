@@ -177,10 +177,7 @@ public class Login_test
 
 	@BeforeSuite
 	public void LoginTOApplication() throws Exception {
-		try
-
-		{
-
+		
 			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 
 			cap.setCapability(MobileCapabilityType.NO_RESET, true); // It will always clear the caches
@@ -211,9 +208,6 @@ public class Login_test
 			// 	// 	.click();
 			// 	System.out.println("############ allow ###########");
 			// }
-
-
-			
 			System.out.println("############ Before Got it ###########");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
@@ -265,13 +259,16 @@ public class Login_test
 					.click();
 
 			driver.terminateApp("com.google.android.gm");
+			driver.activateApp("com.impossible_research.sandbox.starboard");
 
-			driver.startActivity(new Activity("com.impossible_research.sandbox.starboard",
-					"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
+			// driver.startActivity(new Activity("com.impossible_research.sandbox.starboard",
+			// 		"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
+			WebElement skip = wait.until(ExpectedConditions.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
 
-			WebElement skip = wait.until(ExpectedConditions
-					.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
+			try
 
+			{
+			
 			if (skip.isDisplayed()) {
 
 				skip.click();
