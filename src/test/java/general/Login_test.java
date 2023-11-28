@@ -200,17 +200,17 @@ public class Login_test
 			// Open Gmail
 
 			driver.activateApp("com.google.android.gm");
-			// WebElement allow123 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")));
+			WebElement allow123 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")));
 			
 
-			// if (allow123.isDisplayed()) {
+			if (allow123.isDisplayed()) {
 
-			// 	allow123.click();
-			// 	// System.out.println("############ wait ###########");
-			// 	// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
-			// 	// 	.click();
-			// 	System.out.println("############ allow ###########");
-			// }
+				allow123.click();
+				// System.out.println("############ wait ###########");
+				// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+				// 	.click();
+				System.out.println("############ allow ###########");
+			}
 
 
 			
