@@ -202,6 +202,7 @@ public class Login_test
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Wait']")))
 					.click();
 			System.out.println("############ wait ###########");
+			
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
 			System.out.println("############ allow ###########");
