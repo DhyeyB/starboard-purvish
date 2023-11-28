@@ -44,6 +44,7 @@ jobs:
         npm install -g appium@v1.22
         appium -v
         npm -g install npm
+        appium driver install uiautomator2
         appium > /dev/null &
 
         
