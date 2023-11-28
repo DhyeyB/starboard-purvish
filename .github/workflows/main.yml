@@ -41,8 +41,7 @@ jobs:
 
     - name: Install and Run Appium Server
       run: |
-        # npm install -g appium@v1.22
-        npm install -g appium
+        npm install -g appium@v1.22
         appium -v
         npm -g install npm
         appium > /dev/null &
