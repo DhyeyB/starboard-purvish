@@ -222,6 +222,7 @@ public class Login_test
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Google']")))
 					.click();
 			System.out.println("############ Google ###########");
+			System.out.println("############ Before Sign In ###########");
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
 			System.out.println("############ gmail sign in ###########");
 
