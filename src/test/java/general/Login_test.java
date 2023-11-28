@@ -219,9 +219,10 @@ public class Login_test
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
 			System.out.println("############ add an email address ###########");
 
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Google']")))
-					.click();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Google']")));
 			System.out.println("############ Google ###########");
+			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
+			System.out.println("############ Google clicked ###########");
 			System.out.println("############ Before Sign In ###########");
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
 			System.out.println("############ gmail sign in ###########");
