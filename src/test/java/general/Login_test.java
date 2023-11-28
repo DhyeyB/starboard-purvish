@@ -199,6 +199,8 @@ public class Login_test
 
 			// Open Gmail
 			driver.activateApp("com.google.android.gm");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Wait']")))
+					.click();
 			
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
