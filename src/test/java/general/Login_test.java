@@ -202,17 +202,21 @@ public class Login_test
 			
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
 					.click();
+			System.out.println("############ allow ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
+			System.out.println("############ Got it ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
+			System.out.println("############ add an email address ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Google']")))
 					.click();
-
+			System.out.println("############ Google ###########");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Sign in']"))).click();;
-
+			System.out.println("############ gmail sign in ###########");
+			
 			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
 
 			// Enter Email Address
