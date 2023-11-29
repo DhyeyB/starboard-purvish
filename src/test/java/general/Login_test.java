@@ -224,7 +224,7 @@ public class Login_test
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
 			System.out.println("############ Google clicked ###########");
 			System.out.println("############ Before Sign In ###########");
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Email or phone']")));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
 			System.out.println("############ gmail sign in ###########");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
