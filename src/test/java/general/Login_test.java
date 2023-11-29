@@ -224,11 +224,11 @@ public class Login_test
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
 			System.out.println("############ Google clicked ###########");
 			System.out.println("############ Before Sign In ###########");
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Forgot email?']")));
 			System.out.println("############ gmail sign in ###########");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
-		
+			System.out.println("############ index 2 clicked ###########");
 			// Enter Email Address
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
 			System.out.println("############ email address entered ###########");
