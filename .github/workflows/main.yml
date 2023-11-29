@@ -54,7 +54,7 @@ jobs:
         api-level: ${{ matrix.api-level }}
         target: ${{ matrix.target }}
         arch: x86_64
-        profile: Nexus 5
+        profile: Nexus 6
         script: |
           adb install apk/Starboard-dev.apk
           adb shell pm clear com.google.android.gm
