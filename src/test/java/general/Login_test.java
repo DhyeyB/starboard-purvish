@@ -214,7 +214,7 @@ public class Login_test
 			System.out.println("############ Before Got it ###########");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
 					.click();
-
+					
 			// wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gm:id/welcome_tour_got_it")))
 			// .click();
 			System.out.println("############ After Got it ###########");
@@ -227,10 +227,10 @@ public class Login_test
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
 			System.out.println("############ Google clicked ###########");
 			System.out.println("############ Before Sign In ###########");
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.webkit.WebView[@text='Sign in with your Google Account. Learn more']")));
+			// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Sign in']")));
 			System.out.println("############ gmail sign in ###########");
 
-			driver.findElement(By.xpath("//android.view.View[@index='0']")).click();
+			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
 			System.out.println("############ index 2 clicked ###########");
 			// Enter Email Address
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
