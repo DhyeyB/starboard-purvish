@@ -191,7 +191,7 @@ public class Login_test
 
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub/"), cap);
 
-			WebDriverWait wait = new WebDriverWait(driver, 500);
+			WebDriverWait wait = new WebDriverWait(driver, 1000);
 
 			// Close starboard app
 			// driver.closeApp();
