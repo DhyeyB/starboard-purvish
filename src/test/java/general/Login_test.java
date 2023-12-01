@@ -212,8 +212,10 @@ public class Login_test
 			// 	System.out.println("############ allow ###########");
 			// }
 			System.out.println("############ Before Got it ###########");
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
-					.click();
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
+			// 		.click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gm:id/welcome_tour_got_it")))
+			.click();
 			System.out.println("############ After Got it ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
@@ -284,6 +286,8 @@ public class Login_test
 		{
 
 			System.out.println(e2);
+			String pageSource = driver.getPageSource();
+	        System.out.println(pageSource);
 			Allure.addAttachment("AllureSelenide",
 					new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
 
