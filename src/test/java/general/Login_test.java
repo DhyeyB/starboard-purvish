@@ -218,7 +218,6 @@ public class Login_test
 			// wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gm:id/welcome_tour_got_it")))
 			// .click();
 			System.out.println("############ After Got it ###########");
-
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
 			System.out.println("############ add an email address ###########");
 
