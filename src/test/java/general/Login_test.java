@@ -230,7 +230,7 @@ public class Login_test
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.webkit.WebView[@text='Sign in with your Google Account. Learn more']")));
 			System.out.println("############ gmail sign in ###########");
 
-			driver.findElement(By.xpath("//android.widget.TextView[@index='0']")).click();
+			driver.findElement(By.xpath("//android.view.View[@index='0']")).click();
 			System.out.println("############ index 2 clicked ###########");
 			// Enter Email Address
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
