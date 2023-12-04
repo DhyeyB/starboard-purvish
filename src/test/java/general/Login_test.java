@@ -224,6 +224,7 @@ public class Login_test
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Google']")));
 			System.out.println("############ Google ###########");
+			
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
 			System.out.println("############ Google clicked ###########");
 			System.out.println("############ Before Sign In ###########");
