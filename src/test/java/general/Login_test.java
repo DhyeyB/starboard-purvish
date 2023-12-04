@@ -231,7 +231,6 @@ public class Login_test
 			System.out.println("############ Before Sign In ###########");
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@text,'Sign in')][1]")));
 			System.out.println("############ gmail sign in ###########");
-
 			driver.findElement(By.xpath("//android.widget.TextView[@index='2']")).click();
 			System.out.println("############ index 2 clicked ###########");
 			// Enter Email Address
