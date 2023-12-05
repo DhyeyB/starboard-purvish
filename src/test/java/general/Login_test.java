@@ -258,20 +258,25 @@ public class Login_test
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
 					.click();
-
+			System.out.println("############ I agree clicked ###########");
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='MORE']")))
 					.click();
+			System.out.println("############ more clicked ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='ACCEPT']")))
 					.click();
+			System.out.println("############ Accept clicked ###########");
 
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='pandyapurvish1708@gmail.com']")));
+			System.out.println("############ waiting for the email address ###########");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@text='TAKE ME TO GMAIL']")).click();
+			System.out.println("############ take me to the gmail clicked ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Got it']")))
 					.click();
+			System.out.println("############ got it clicked ###########");
 
 			driver.terminateApp("com.google.android.gm");
 			driver.activateApp("com.impossible_research.sandbox.starboard");
