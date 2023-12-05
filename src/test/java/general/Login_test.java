@@ -240,15 +240,21 @@ public class Login_test
 			driver.hideKeyboard();
 			
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			System.out.println("############ next button clicked ###########");
 
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Show password']")));
+			System.out.println("############ show password visible ###########");
 			driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
+			System.out.println("############ password clicked ###########");
 
 			// Enter Password
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
+			System.out.println("############ password entered ###########");
 			driver.hideKeyboard();
+			System.out.println("############ before password next button clicked ###########");
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			System.out.println("############ after password next button clicked ###########");
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
 					.click();
