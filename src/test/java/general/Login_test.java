@@ -238,6 +238,7 @@ public class Login_test
 			System.out.println("############ email address entered ###########");
 			//Hide the keyboard
 			driver.hideKeyboard();
+			
 			System.out.println("############ before next button clicked ###########");
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 			System.out.println("############ after next button clicked ###########");
