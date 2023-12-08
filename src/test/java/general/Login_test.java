@@ -255,7 +255,7 @@ public class Login_test
 			
 			driver.hideKeyboard();
 
-			System.out.println("############ before password next button clicked ###########");
+			System.out.println("############ keyboard hide ###########");
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 			System.out.println("############ after password next button clicked ###########");
 
