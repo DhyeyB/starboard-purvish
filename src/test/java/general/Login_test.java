@@ -242,7 +242,8 @@ public class Login_test
 			System.out.println("############ before next button clicked ###########");
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 			System.out.println("############ after next button clicked ###########");
-
+			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			System.out.println("############ after next button clicked again ###########");
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Show password']")));
 			System.out.println("############ show password visible ###########");
