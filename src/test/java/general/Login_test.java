@@ -228,6 +228,14 @@ public class Login_test
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
 			System.out.println("############ Google clicked ###########");
 			
+			boolean google = driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).isDisplayed();
+
+			if(google){
+				System.out.println("Google is visible");
+				driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
+				System.out.println("############ Google clicked again ###########");
+			}
+
 			System.out.println("############ Before Sign In ###########");
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@text,'Sign in')][1]")));
 			System.out.println("############ gmail sign in ###########");
@@ -240,11 +248,19 @@ public class Login_test
 			driver.hideKeyboard();
 			
 			System.out.println("############ before next button clicked ###########");
-			// driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-			driver.findElement(By.id("identifierNext")).c‌​lick();
+			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 			System.out.println("############ after next button clicked ###########");
-			// driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-			// System.out.println("############ after next button clicked again ###########");
+			// driver.findElement(By.xpath("//android.widget.Button[@text#####");='Next']")).click();
+			// System.out.println("############ after next button clicked again ######
+
+			boolean next = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
+
+			if(next){
+				System.out.println("Next is visible");
+				driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+				System.out.println("############ Next clicked again ###########");
+			}
+
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Show password']")));
 			System.out.println("############ show password visible ###########");
