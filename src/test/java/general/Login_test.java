@@ -260,14 +260,14 @@ public class Login_test
 				System.out.println("############ Next clicked again ###########");
 			}
 
-			driver.hideKeyboard();
-			System.out.println("############ keyboard hide first ###########");
+			// driver.hideKeyboard();
+			// System.out.println("############ keyboard hide first ###########");
 
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.view.View[@text='Show password']")));
 			System.out.println("############ show password visible ###########");
-			driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
-			System.out.println("############ password clicked ###########");
+			// driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
+			// System.out.println("############ password clicked ###########");
 
 			// Enter Password
 			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
