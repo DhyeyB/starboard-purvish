@@ -231,7 +231,7 @@ public class Login_test
 			boolean google = driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).isDisplayed();
 
 			if(google){
-				System.out.println("Google is visible");
+				System.out.println("############ Google is visible ###########");
 				driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
 				System.out.println("############ Google clicked again ###########");
 			}
