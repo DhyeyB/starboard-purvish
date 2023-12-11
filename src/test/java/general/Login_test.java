@@ -282,6 +282,7 @@ public class Login_test
 				driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 				System.out.println("############ Next2 clicked again ###########");
 			}
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
 					.click();
 			System.out.println("############ I agree clicked ###########");
