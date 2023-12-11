@@ -254,7 +254,6 @@ public class Login_test
 			// System.out.println("############ after next button clicked again ######
 
 			boolean next = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
-
 			if(next){
 				System.out.println("############ Next is visible ############");
 				driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
