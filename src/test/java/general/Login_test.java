@@ -261,7 +261,7 @@ public class Login_test
 			}
 
 			wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Show password']")));
+					.visibilityOfElementLocated(By.xpath("//android.view.View[@text='Show password']")));
 			System.out.println("############ show password visible ###########");
 			driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
 			System.out.println("############ password clicked ###########");
@@ -275,6 +275,13 @@ public class Login_test
 			System.out.println("############ keyboard hide ###########");
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 			System.out.println("############ after password next button clicked ###########");
+
+			boolean next2 = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
+			if(next2){
+				System.out.println("############ Next2 is visible ############");
+				driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+				System.out.println("############ Next2 clicked again ###########");
+			}
 
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
 					.click();
