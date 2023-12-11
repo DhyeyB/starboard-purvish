@@ -260,6 +260,9 @@ public class Login_test
 				System.out.println("############ Next clicked again ###########");
 			}
 
+			driver.hideKeyboard();
+			System.out.println("############ keyboard hide first ###########");
+
 			wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//android.view.View[@text='Show password']")));
 			System.out.println("############ show password visible ###########");
