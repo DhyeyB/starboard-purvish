@@ -267,7 +267,7 @@ public class Login_test
 			System.out.println("############ password clicked ###########");
 
 			// Enter Password
-			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("Jayshreekrishna@7");
+			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
 			System.out.println("############ password entered ###########");
 			
 			driver.hideKeyboard();
