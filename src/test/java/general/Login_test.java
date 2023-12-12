@@ -242,7 +242,7 @@ public class Login_test
 			driver.findElement(By.xpath("//*[contains(@index,'2')]")).click();
 			System.out.println("############ index 2 clicked ###########");
 			// Enter Email Address
-			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1708@gmail.com");
+			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1707@gmail.com");
 			System.out.println("############ email address entered ###########");
 			//Hide the keyboard
 			driver.hideKeyboard();
@@ -267,12 +267,12 @@ public class Login_test
 			System.out.println("############ password clicked ###########");
 
 			// Enter Password
-			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("jayshreekrishna@789");
+			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("Jayshreekrishna@7");
 			System.out.println("############ password entered ###########");
 			
 			driver.hideKeyboard();
 			System.out.println("############ keyboard hide ###########");
-			
+
 			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
 			System.out.println("############ after password next button clicked ###########");
 
