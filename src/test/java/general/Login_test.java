@@ -74,6 +74,7 @@ public class Login_test
 					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text=\"Sign in\"]")));
 
 			driver.findElement(By.xpath("//android.widget.TextView[@text=\"Sign in\"]")).click();
+			System.out.println("############ clicked on signin ###########");
 
 			// click on email textbox
 			wait.until(
@@ -82,84 +83,86 @@ public class Login_test
 			driver.findElement(By.xpath("//android.widget.EditText[@index='0']"))
 
 					.sendKeys("pandyapurvish1708@gmail.com"); // User for Staging environment
+					System.out.println("############ email entered ###########");
 
 			driver.findElement(By.xpath("//android.widget.TextView[@text='Send Magic Link']")).click();
+		    System.out.println("############ clicked on magic link ###########");
 			wait.until(
 					ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='OK']")));
 			driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();
 
 			driver.closeApp();
 
-			// Open Gmail
-			driver.activateApp("com.google.android.gm");
+			// // Open Gmail
+			// driver.activateApp("com.google.android.gm");
 
-			// Wait for new magic link mail
-			wait.until(ExpectedConditions.visibilityOfElementLocated(
-					By.xpath("(//android.widget.TextView[@text='Magic link to sign in to the app.']) [1]")));
+			// // Wait for new magic link mail
+			// wait.until(ExpectedConditions.visibilityOfElementLocated(
+			// 		By.xpath("(//android.widget.TextView[@text='Magic link to sign in to the app.']) [1]")));
 
-			driver.findElement(By.xpath("(//android.widget.TextView[@text='Magic link to sign in to the app.']) [1]"))
-					.click();
-
-			// Scroll and Click on magic link
-			MobileElement ele = driver.findElement(MobileBy.AndroidUIAutomator(
-					"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Login to Starboard\"))"));
-			ele.click();
-
-			// Enter Your PIN
-			wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Enter your new PIN']")));
-
-			// Click on 1
-			driver.findElement(By.xpath("//android.widget.TextView[@text='1']")).click();
-
-			// Click on 2
-			driver.findElement(By.xpath("//android.widget.TextView[@text='2']")).click();
-
-			// Click on 3
-			driver.findElement(By.xpath("//android.widget.TextView[@text='3']")).click();
-
-			// Click on 4
-			driver.findElement(By.xpath("//android.widget.TextView[@text='4']")).click();
-
-			// Click on 5
-			driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
-
-			// WebDriverWait wait2 = new WebDriverWait(driver, 20);
-
-			WebElement div2 = wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Confirm your new PIN']")));
-
-			// Click on 1
-			driver.findElement(By.xpath("//android.widget.TextView[@text='1']")).click();
-
-			// Click on 2
-			driver.findElement(By.xpath("//android.widget.TextView[@text='2']")).click();
-
-			// Click on 3
-			driver.findElement(By.xpath("//android.widget.TextView[@text='3']")).click();
-
-			// Click on 4
-			driver.findElement(By.xpath("//android.widget.TextView[@text='4']")).click();
-
-			// Click on 5
-			driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
-
-			wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='PIN Set Up Successful']")));
-
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Skip']")))
-					.click();
-
-			wait.until(ExpectedConditions.visibilityOfElementLocated(
-					By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]")));
-			driver.findElement(By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]"))
-					.getText();
-			driver.findElement(By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]"))
-					.click();
-			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+			// driver.findElement(By.xpath("(//android.widget.TextView[@text='Magic link to sign in to the app.']) [1]"))
 			// 		.click();
 
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Home']")));
+			// // Scroll and Click on magic link
+			// MobileElement ele = driver.findElement(MobileBy.AndroidUIAutomator(
+			// 		"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"Login to Starboard\"))"));
+			// ele.click();
+
+			// // Enter Your PIN
+			// wait.until(ExpectedConditions
+			// 		.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Enter your new PIN']")));
+
+			// // Click on 1
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='1']")).click();
+
+			// // Click on 2
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='2']")).click();
+
+			// // Click on 3
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='3']")).click();
+
+			// // Click on 4
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='4']")).click();
+
+			// // Click on 5
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
+
+			// // WebDriverWait wait2 = new WebDriverWait(driver, 20);
+
+			// WebElement div2 = wait.until(ExpectedConditions
+			// 		.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Confirm your new PIN']")));
+
+			// // Click on 1
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='1']")).click();
+
+			// // Click on 2
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='2']")).click();
+
+			// // Click on 3
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='3']")).click();
+
+			// // Click on 4
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='4']")).click();
+
+			// // Click on 5
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='5']")).click();
+
+			// wait.until(ExpectedConditions
+			// 		.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='PIN Set Up Successful']")));
+
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Skip']")))
+			// 		.click();
+
+			// wait.until(ExpectedConditions.visibilityOfElementLocated(
+			// 		By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]")));
+			// driver.findElement(By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]"))
+			// 		.getText();
+			// driver.findElement(By.xpath("(//*[@resource-id='com.impossible_research.sandbox.starboard:id/head']) [1]"))
+			// 		.click();
+			// // wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")))
+			// // 		.click();
+
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Home']")));
 
 		}
 
@@ -177,9 +180,7 @@ public class Login_test
 
 	@BeforeSuite
 	public void LoginTOApplication() throws Exception {
-		try
-
-			{
+	
 		
 			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 
@@ -194,12 +195,12 @@ public class Login_test
 			WebDriverWait wait = new WebDriverWait(driver, 500);
 
 			// Close starboard app
-			// driver.closeApp();
+			//driver.closeApp();
 	
 
 			// Open Gmail
 
-			driver.activateApp("com.google.android.gm");
+			// driver.activateApp("com.google.android.gm");
 			// WebElement allow123 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Allow']")));
 			
 
@@ -211,113 +212,116 @@ public class Login_test
 			// 	// 	.click();
 			// 	System.out.println("############ allow ###########");
 			// }
-			System.out.println("############ Before Got it ###########");
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
-					.click();
+			// System.out.println("############ Before Got it ###########");
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='GOT IT']")))
+			// 		.click();
 					
-			// wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gm:id/welcome_tour_got_it")))
-			// .click();
-			System.out.println("############ After Got it ###########");
+			// // wait.until(ExpectedConditions.elementToBeClickable(By.id("com.google.android.gm:id/welcome_tour_got_it")))
+			// // .click();
+			// System.out.println("############ After Got it ###########");
 
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
-			System.out.println("############ add an email address ###########");
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[@text='Add an email address']"))).click();
+			// System.out.println("############ add an email address ###########");
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Google']")));
-			System.out.println("############ Google ###########");
+			// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Google']")));
+			// System.out.println("############ Google ###########");
 
-			driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
-			System.out.println("############ Google clicked ###########");
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
+			// System.out.println("############ Google clicked ###########");
 			
-			boolean google = driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).isDisplayed();
+			// boolean google = driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).isDisplayed();
 
-			if(google){
-				System.out.println("############ Google is visible ###########");
-				driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
-				System.out.println("############ Google clicked again ###########");
-			}
+			// if(google){
+			// 	System.out.println("############ Google is visible ###########");
+			// 	driver.findElement(By.xpath("//android.widget.TextView[@text='Google']")).click();
+			// 	System.out.println("############ Google clicked again ###########");
+			// }
 
 
-			System.out.println("############ Before Sign In ###########");
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@text,'Sign in')][1]")));
-			System.out.println("############ gmail sign in ###########");
+			// System.out.println("############ Before Sign In ###########");
+			// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@text,'Sign in')][1]")));
+			// System.out.println("############ gmail sign in ###########");
 
-			driver.findElement(By.xpath("//*[contains(@index,'2')]")).click();
-			System.out.println("############ index 2 clicked ###########");
-			// Enter Email Address
-			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1707@gmail.com");
-			System.out.println("############ email address entered ###########");
-			//Hide the keyboard
-			driver.hideKeyboard();
+			// driver.findElement(By.xpath("//*[contains(@index,'2')]")).click();
+			// System.out.println("############ index 2 clicked ###########");
+			// // Enter Email Address
+			// driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("pandyapurvish1707@gmail.com");
+			// System.out.println("############ email address entered ###########");
+			// //Hide the keyboard
+			// driver.hideKeyboard();
 			
-			System.out.println("############ before next button clicked ###########");
-			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-			System.out.println("############ after next button clicked ###########");
-			// driver.findElement(By.xpath("//android.widget.Button[@text#####");='Next']")).click();
-			// System.out.println("############ after next button clicked again ######
+			// System.out.println("############ before next button clicked ###########");
+			// driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			// System.out.println("############ after next button clicked ###########");
+			// // driver.findElement(By.xpath("//android.widget.Button[@text#####");='Next']")).click();
+			// // System.out.println("############ after next button clicked again ######
 
-			boolean next = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
-			if(next){
-				System.out.println("############ Next is visible ############");
-				driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-				System.out.println("############ Next clicked again ###########");
-			}
+			// boolean next = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
+			// if(next){
+			// 	System.out.println("############ Next is visible ############");
+			// 	driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			// 	System.out.println("############ Next clicked again ###########");
+			// }
 
-			wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("//android.view.View[@text='Show password']")));
-			System.out.println("############ show password visible ###########");
-			driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
-			System.out.println("############ password clicked ###########");
+			// wait.until(ExpectedConditions
+			// 		.visibilityOfElementLocated(By.xpath("//android.view.View[@text='Show password']")));
+			// System.out.println("############ show password visible ###########");
+			// driver.findElement(By.xpath("//android.widget.EditText[@index='0']")).click();
+			// System.out.println("############ password clicked ###########");
 
-			// Enter Password
-			driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("Jayshreekrishna@7");
-			System.out.println("############ password entered ###########");
+			// // Enter Password
+			// driver.findElement(By.xpath("//android.widget.EditText[@text='']")).sendKeys("Jayshreekrishna@7");
+			// System.out.println("############ password entered ###########");
 			
-			driver.hideKeyboard();
-			System.out.println("############ keyboard hide ###########");
+			// driver.hideKeyboard();
+			// System.out.println("############ keyboard hide ###########");
 
-			driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-			System.out.println("############ after password next button clicked ###########");
+			// driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			// System.out.println("############ after password next button clicked ###########");
 
-			boolean next2 = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
-			if(next2){
-				System.out.println("############ Next2 is visible ############");
-				driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
-				System.out.println("############ Next2 clicked again ###########");
-			}
+			// boolean next2 = driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).isDisplayed();
+			// if(next2){
+			// 	System.out.println("############ Next2 is visible ############");
+			// 	driver.findElement(By.xpath("//android.widget.Button[@text='Next']")).click();
+			// 	System.out.println("############ Next2 clicked again ###########");
+			// }
 
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
-					.click();
-			System.out.println("############ I agree clicked ###########");
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='MORE']")))
-					.click();
-			System.out.println("############ more clicked ###########");
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='I agree']")))
+			// 		.click();
+			// System.out.println("############ I agree clicked ###########");
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='MORE']")))
+			// 		.click();
+			// System.out.println("############ more clicked ###########");
 
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='ACCEPT']")))
-					.click();
-			System.out.println("############ Accept clicked ###########");
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='ACCEPT']")))
+			// 		.click();
+			// System.out.println("############ Accept clicked ###########");
 
-			wait.until(ExpectedConditions
-					.elementToBeClickable(By.xpath("//android.widget.TextView[@text='pandyapurvish1708@gmail.com']")));
-			System.out.println("############ waiting for the email address ###########");
+			// wait.until(ExpectedConditions
+			// 		.elementToBeClickable(By.xpath("//android.widget.TextView[@text='pandyapurvish1708@gmail.com']")));
+			// System.out.println("############ waiting for the email address ###########");
 
-			driver.findElement(By.xpath("//android.widget.TextView[@text='TAKE ME TO GMAIL']")).click();
-			System.out.println("############ take me to the gmail clicked ###########");
+			// driver.findElement(By.xpath("//android.widget.TextView[@text='TAKE ME TO GMAIL']")).click();
+			// System.out.println("############ take me to the gmail clicked ###########");
 
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Got it']")))
-					.click();
-			System.out.println("############ got it clicked ###########");
+			// wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[@text='Got it']")))
+			// 		.click();
+			// System.out.println("############ got it clicked ###########");
 
-			driver.terminateApp("com.google.android.gm");
+			// driver.terminateApp("com.google.android.gm");
 			driver.activateApp("com.impossible_research.sandbox.starboard");
+			System.out.println("############ staroard app open ###########");
 
-			// driver.startActivity(new Activity("com.impossible_research.sandbox.starboard",
-			// 		"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
+try {
+				driver.startActivity(new Activity("com.impossible_research.sandbox.starboard",
+					"com.impossible_research.sandbox.starboard.ui.splash.view.SplashActivity"));
 			WebElement skip = wait.until(ExpectedConditions.elementToBeClickable(By.id("com.impossible_research.sandbox.starboard:id/skip_btn")));
 
 			
 			if (skip.isDisplayed()) {
 
 				skip.click();
+				System.out.println("############ skip clicked ###########");
 
 			}
 
