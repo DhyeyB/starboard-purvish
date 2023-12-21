@@ -91,6 +91,7 @@ public class Login_test
 					ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='OK']")));
 			driver.findElement(By.xpath("//android.widget.TextView[@text='OK']")).click();
 
+
 			driver.closeApp();
 
 			// // Open Gmail
